@@ -24,15 +24,38 @@
 //   sound: 'Weeee'
 // }
 
-function Animal (name, type, age, sound) {
-  this.name = name
-  this.type = type
-  this.age = age
-  this.sound = sound
+// function Animal (name, type, age, sound) {
+//   this.name = name
+//   this.type = type
+//   this.age = age
+//   this.sound = sound
+// }
+
+// let gerald = new Animal('Gerald', 'cow', 5, 'Mooo')
+// let carlos = new Animal('Carlos', 'zebra', 2, 'Weee')
+
+// console.log(gerald)
+// console.log(carlos)
+
+function Movie (title, director, plot, isGood) {
+  this.title = title
+  this.director = director
+  this.plot = plot
+  this.isGood = isGood || true
+  this.printInfo = function () {
+    console.log(`
+      Title: ${this.title}
+      Director: ${this.director}
+      Plot: ${this.plot}
+    `)
+  }
 }
 
-let gerald = new Animal('Gerald', 'cow', 5, 'Mooo')
-let carlos = new Animal('Carlos', 'zebra', 2, 'Weee')
+let goodfellas = new Movie('Goodfellas', 'Martin Scorsese', 'short plot', true)
+let theRoom = new Movie('The Room', 'Tommy Wiseau', 'short plot')
 
-console.log(gerald)
-console.log(carlos)
+console.log(goodfellas, theRoom)
+
+
+
+// goodfellas.printInfo()
