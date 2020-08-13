@@ -60,32 +60,32 @@
 
 // goodfellas.printInfo()
 
-function Person (name, age, email, address) {
-  this.name = name
-  this.age = age
-  this.email = email
-  this.address = address
-}
+// function Person (name, age, email, address) {
+//   this.name = name
+//   this.age = age
+//   this.email = email
+//   this.address = address
+// }
 
-function Student (name, age, email, address, grade, gpa) {
-  Person.call(this, name, age, email, address)
-  this.grade = grade
-  this.gpa = gpa
-}
+// function Student (name, age, email, address, grade, gpa) {
+//   Person.call(this, name, age, email, address)
+//   this.grade = grade
+//   this.gpa = gpa
+// }
 
-let student = new Student('Jack', 18, 'jack@gmail.com', '123 South St', 12, 3.8)
+// let student = new Student('Jack', 18, 'jack@gmail.com', '123 South St', 12, 3.8)
 
-console.log(student)
+// console.log(student)
 
-function Teacher (name, age, email, address, subject, room) {
-  Person.call(this, name, age, email, address)
-  this.subject = subject
-  this.room = room
-}
+// function Teacher (name, age, email, address, subject, room) {
+//   Person.call(this, name, age, email, address)
+//   this.subject = subject
+//   this.room = room
+// }
 
-let teacher = new Teacher('John', 47, 'john@gmail.com', '234 Main St', 'English', 403)
+// let teacher = new Teacher('John', 47, 'john@gmail.com', '234 Main St', 'English', 403)
 
-console.log(teacher)
+// console.log(teacher)
 
 // function Student (name, age, email, address, grade, gpa) {
 //   this.name = name
@@ -104,3 +104,27 @@ console.log(teacher)
 //   this.subject = subject
 //   this.room = room
 // }
+
+const person = (name, age, email, address) => ({ name, age, email, address })
+
+const student = (name, age, email, address, grade, gpa) => ({
+  ...person(name, age, email, address),
+  grade,
+  gpa
+})
+
+const teacher = (name, age, email, address, subject, room) => ({
+  ...person(name, age, email, address),
+  subject,
+  room
+})
+
+let jack = student('Jack', 18, 'jack@gmail.com', '123 South St', 12, 3.8)
+
+let john = teacher('John', 47, 'john@gmail.com', '234 Main St', 'English', 407)
+
+console.log(jack, john)
+
+// let john = person('John', 47, 'john@gmail.com', '123 Main St')
+
+// console.log(john)
