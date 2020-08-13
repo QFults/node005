@@ -20,6 +20,7 @@ const buildAssassin = (data) => {
     .then(({ stealth, poison }) => {
       const assassin = new Assassin(data.name, data.hp, data.mp, data.weapon, stealth, poison)
       console.log(assassin)
+      menu()
     })
     .catch(err => console.log(err))
 }
@@ -40,6 +41,7 @@ const buildSoldier = (data) => {
     .then(({ rank, banner }) => {
       const soldier = new Soldier(data.name, data.hp, data.mp, data.weapon, rank, banner)
       console.log(soldier)
+      menu()
     })
     .catch(err => console.log(err))
 }
@@ -60,49 +62,54 @@ const buildWizard = (data) => {
     .then(({ element, summon }) => {
       const wizard = new Wizard(data.name, data.hp, data.mp, data.weapon, element, summon)
       console.log(wizard)
+      menu()
     })
     .catch(err => console.log(err))
 }
 
-prompt([
-  {
-    type: 'list',
-    name: 'character',
-    choices: ['Assassin', 'Soldier', 'Wizard'],
-    message: 'Select the type of character you want to make:'
-  },
-  {
-    type: 'input',
-    name: 'name',
-    message: 'What is the character name?'
-  },
-  {
-    type: 'number',
-    name: 'hp',
-    message: 'What is the character hp (Hit Points)?'
-  },
-  {
-    type: 'number',
-    name: 'mp',
-    message: 'What is the character mp (Magic Points)?'
-  },
-  {
-    type: 'input',
-    name: 'weapon',
-    message: 'What is the character weapon?'
-  }
-])
-  .then(data => {
-    switch (data.character) {
-      case 'Assassin':
-        buildAssassin(data)
-        break
-      case 'Soldier':
-        buildSoldier(data)
-        break
-      case 'Wizard':
-        buildWizard(data)
-        break
+const menu = () => {
+  prompt([
+    {
+      type: 'list',
+      name: 'character',
+      choices: ['Assassin', 'Soldier', 'Wizard'],
+      message: 'Select the type of character you want to make:'
+    },
+    {
+      type: 'input',
+      name: 'name',
+      message: 'What is the character name?'
+    },
+    {
+      type: 'number',
+      name: 'hp',
+      message: 'What is the character hp (Hit Points)?'
+    },
+    {
+      type: 'number',
+      name: 'mp',
+      message: 'What is the character mp (Magic Points)?'
+    },
+    {
+      type: 'input',
+      name: 'weapon',
+      message: 'What is the character weapon?'
     }
-  })
-  .catch(err => console.log(err))
+  ])
+    .then(data => {
+      switch (data.character) {
+        case 'Assassin':
+          buildAssassin(data)
+          break
+        case 'Soldier':
+          buildSoldier(data)
+          break
+        case 'Wizard':
+          buildWizard(data)
+          break
+      }
+    })
+    .catch(err => console.log(err))
+}
+
+menu()
