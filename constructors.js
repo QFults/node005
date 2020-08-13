@@ -1,3 +1,7 @@
+// --------------------
+
+// Examples of using native javascript constructors
+
 // let greeting = 'Hello World!'
 
 // let greeting = new String('Hello World!')
@@ -10,19 +14,9 @@
 
 // let bool = new Boolean(true)
 
-// let animal = {
-//   name: 'Gerald',
-//   type: 'Cow',
-//   age: 5,
-//   sound: 'Mooo'
-// }
+// --------------------
 
-// let animal1 = {
-//   name: 'Carlos',
-//   type: 'Zebra',
-//   age: 2,
-//   sound: 'Weeee'
-// }
+// Function Constructors
 
 // function Animal (name, type, age, sound) {
 //   this.name = name
@@ -56,9 +50,11 @@
 
 // console.log(goodfellas, theRoom)
 
-
-
 // goodfellas.printInfo()
+
+// --------------------
+
+// More Function Constructors
 
 // function Person (name, age, email, address) {
 //   this.name = name
@@ -97,23 +93,9 @@
 
 // console.log(teacher)
 
-// function Student (name, age, email, address, grade, gpa) {
-//   this.name = name
-//   this.age = age
-//   this.email = email
-//   this.address = address
-//   this.grade = grade
-//   this.gpa = gpa
-// }
+// --------------------
 
-// function Teacher (name, age, email, address, subject, room) {
-//   this.name = name
-//   this.age = age
-//   this.email = email
-//   this.address = address
-//   this.subject = subject
-//   this.room = room
-// }
+// Factory Functions
 
 // const person = (name, age, email, address) => ({ name, age, email, address })
 
@@ -150,6 +132,10 @@
 // let john = person('John', 47, 'john@gmail.com', '123 Main St')
 
 // console.log(john)
+
+// --------------------
+
+// Class Constructors
 
 // class Person {
 //   constructor (name, age, email, address) {
@@ -193,3 +179,5 @@
 // let john = new Person('John', 47, 'john@gmail.com', '123 Main St')
 
 // console.log(john)
+
+// --------------------
