@@ -65,6 +65,14 @@
 //   this.age = age
 //   this.email = email
 //   this.address = address
+//   this.printInfo = function () {
+//     console.log(`
+//       Name: ${this.name}
+//       Age: ${this.age}
+//       Email: ${this.email}
+//       Address: ${this.address}
+//     `)
+//   }
 // }
 
 // function Student (name, age, email, address, grade, gpa) {
@@ -74,6 +82,8 @@
 // }
 
 // let student = new Student('Jack', 18, 'jack@gmail.com', '123 South St', 12, 3.8)
+
+// student.printInfo()
 
 // console.log(student)
 
@@ -105,26 +115,81 @@
 //   this.room = room
 // }
 
-const person = (name, age, email, address) => ({ name, age, email, address })
+// const person = (name, age, email, address) => ({ name, age, email, address })
 
-const student = (name, age, email, address, grade, gpa) => ({
-  ...person(name, age, email, address),
-  grade,
-  gpa
-})
+// const student = (name, age, email, address, grade, gpa) => ({
+//   ...person(name, age, email, address),
+//   grade,
+//   gpa,
+//   printInfo () {
+//     console.log(`
+//       Name: ${name}
+//       Age: ${age}
+//       Email: ${email}
+//       Address: ${address}
+//       Grade: ${grade}
+//       GPA: ${gpa}
+//     `)
+//   }
+// })
 
-const teacher = (name, age, email, address, subject, room) => ({
-  ...person(name, age, email, address),
-  subject,
-  room
-})
+// const teacher = (name, age, email, address, subject, room) => ({
+//   ...person(name, age, email, address),
+//   subject,
+//   room
+// })
 
-let jack = student('Jack', 18, 'jack@gmail.com', '123 South St', 12, 3.8)
+// let jack = student('Jack', 18, 'jack@gmail.com', '123 South St', 12, 3.8)
 
-let john = teacher('John', 47, 'john@gmail.com', '234 Main St', 'English', 407)
+// jack.printInfo()
 
-console.log(jack, john)
+// let john = teacher('John', 47, 'john@gmail.com', '234 Main St', 'English', 407)
+
+// console.log(jack, john)
 
 // let john = person('John', 47, 'john@gmail.com', '123 Main St')
+
+// console.log(john)
+
+// class Person {
+//   constructor (name, age, email, address) {
+//     this.name = name
+//     this.age = age
+//     this.email = email
+//     this.address = address
+//   }
+
+//   printName () {
+//     console.log(this.name)
+//   }
+// }
+
+// class Student extends Person {
+//   constructor (name, age, email, address, grade, gpa) {
+//     super(name, age, email, address)
+//     this.grade = grade
+//     this.gpa = gpa
+//   }
+// }
+
+// let jack = new Student('Jack', 18, 'jack@gmail.com', '123 South St', 12, 3.8)
+
+// jack.printName()
+
+// console.log(jack)
+
+// class Teacher extends Person {
+//   constructor (name, age, email, address, subject, room) {
+//     super(name, age, email, address)
+//     this.subject = subject
+//     this.room = room
+//   }
+// }
+
+// let john = new Teacher('John', 47, 'john@gmail.com', '123 Main St', 'English', 407)
+
+// console.log(john)
+
+// let john = new Person('John', 47, 'john@gmail.com', '123 Main St')
 
 // console.log(john)
